@@ -4,7 +4,7 @@ body {
 }
 
 div.spacer {
-  height: 2rem;
+  height: 5rem;
 }
 
 .modal-content {
@@ -84,6 +84,8 @@ div.form-group div.col-lg-10 {
   border-radius: 0;
 }
 
+
+
 div.btn-container {
   margin: 10px 0 10px 0;
 }
@@ -113,12 +115,8 @@ div.btn-container {
 }
 
 i.icon-btn {
-  margin: 0 10px 0 10px;
-}
-
-i.icon-btn:hover {
-  color: lightgrey;
-}
+   margin: 0 10px 0 10px;
+ }
 
 li.nav-item {
   font-size: 1rem;
