@@ -21,10 +21,44 @@ import {VatRegistryComponent} from "./vatregistry/vatregistry.component";
 import {KpirRegistryService} from "./service/kpirregistry.service";
 import {KpirRegistryComponent} from "./kpirregistry/kpirregistry.component";
 import {CompanyModalComponent} from "./account/company/company.modal.component";
-import {AppRoutingModule} from "./app.routing.module";
 import { Angular2FontawesomeModule } from 'angular2-fontawesome/angular2-fontawesome'
 import {DateFilterComponent} from "./common/filter/date.filter.component";
-import {DateFilterCriteria} from "./common/filter/date.filter.criteria";
+import {RouterModule, Routes} from "@angular/router";
+
+const appRoutes: Routes = [
+  {
+    path: '',
+    component: HomeComponent
+  },
+  {
+    path: 'registration',
+    component: RegistrationComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'company',
+    component: CompanyComponent,
+    canActivate: [CanActivateAuthGuard]
+  },
+  {
+    path: 'operations',
+    component: OperationsComponent,
+    canActivate: [CanActivateAuthGuard]
+  },
+  {
+    path: 'vat-registry',
+    component: VatRegistryComponent,
+    canActivate: [CanActivateAuthGuard]
+  },
+  {
+    path: 'kpir-registry',
+    component: KpirRegistryComponent,
+    canActivate: [CanActivateAuthGuard]
+  }
+];
 
 @NgModule({
   declarations: [
@@ -45,7 +79,7 @@ import {DateFilterCriteria} from "./common/filter/date.filter.criteria";
     FormsModule,
     HttpModule,
     NgbModule.forRoot(),
-    AppRoutingModule,
+    RouterModule.forRoot(appRoutes),
     Angular2FontawesomeModule
   ],
   providers: [
