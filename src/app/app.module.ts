@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-
 import { AppComponent } from './app.component';
 import {RegistrationComponent} from "./account/registration/registration.component";
 import {LoginComponent} from "./account/login/login.component";
@@ -21,7 +20,7 @@ import {VatRegistryComponent} from "./vatregistry/vatregistry.component";
 import {KpirRegistryService} from "./service/kpirregistry.service";
 import {KpirRegistryComponent} from "./kpirregistry/kpirregistry.component";
 import {CompanyModalComponent} from "./account/company/company.modal.component";
-import { Angular2FontawesomeModule } from 'angular2-fontawesome/angular2-fontawesome'
+
 import {DateFilterComponent} from "./common/filter/date.filter.component";
 import {RouterModule, Routes} from "@angular/router";
 
@@ -79,8 +78,7 @@ const appRoutes: Routes = [
     FormsModule,
     HttpModule,
     NgbModule.forRoot(),
-    RouterModule.forRoot(appRoutes),
-    Angular2FontawesomeModule
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [
     AuthenticationService,
